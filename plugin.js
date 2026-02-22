@@ -6,6 +6,11 @@ s.color=value;
 return s.color!=="";
 }
 
+if(typeof commands==="object"){
+commands["bg"]="Change background color (hex, rgb, name).";
+commands["text"]="Change text color (hex, rgb, name).";
+}
+
 const originalHandle=handle;
 
 handle=async function(input){
