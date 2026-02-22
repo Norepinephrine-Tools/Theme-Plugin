@@ -6,11 +6,6 @@ s.color=value;
 return s.color!=="";
 }
 
-if(typeof commands==="object"){
-commands["bg"]="Change background color (hex, rgb, name).";
-commands["text"]="Change text color (hex, rgb, name).";
-}
-
 const originalHandle=handle;
 
 handle=async function(input){
@@ -32,15 +27,6 @@ if(!args)return print("Provide a color.");
 if(!validColor(args))return print("Invalid color format.");
 document.documentElement.style.setProperty("--glow",args);
 print("Text color updated.");
-return;
-}
-
-if(cmd==="help"){
-print("<hr>",true);
-for(let c in commands){
-print(`<span class="cmd">${c}</span>: ${commands[c]}`,true);
-}
-print("<hr>",true);
 return;
 }
 
