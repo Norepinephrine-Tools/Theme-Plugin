@@ -35,6 +35,15 @@ print("Text color updated.");
 return;
 }
 
+if(cmd==="help"){
+print("<hr>",true);
+for(let c in commands){
+print(`<span class="cmd">${c}</span>: ${commands[c]}`,true);
+}
+print("<hr>",true);
+return;
+}
+
 return originalHandle(input);
 };
 
